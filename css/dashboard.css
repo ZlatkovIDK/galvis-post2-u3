@@ -1,0 +1,31 @@
+/* ── Reset y variables ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+ --sidebar-w : 220px;
+ --topbar-h : 60px;
+ --primary : #C62828;
+ --secondary : #E53935;
+ --dark : #8E0000;
+ --bg : #F5F5F5;
+ --white : #FFFFFF;
+ --text : #000000;
+ --grey : #808080;
+ --border : #CCCCCC;
+ --radius : 6px;
+ --shadow : 0 2px 8px rgba(0,0,0,0.08);
+}
+html, body { height: 100%; font-family: Arial, Helvetica, sans-serif; }
+body { background: var(--bg); color: var(--text); font-size: 16px; }
+/* ── Grid principal de la aplicación ── */
+.app-layout {
+ display : grid;
+ min-height : 100vh;
+ grid-template-columns: var(--sidebar-w) 1fr;
+ grid-template-rows : var(--topbar-h) 1fr;
+ grid-template-areas :
+ "sidebar topbar"
+ "sidebar main";
+}
+.sidebar { grid-area: sidebar; }
+.topbar { grid-area: topbar; }
+.dashboard-main { grid-area: main; }
